@@ -4,11 +4,39 @@ import (
 	"algorithm/ArrayList"
 	"algorithm/Stack"
 	"algorithm/circelqueue"
+	"algorithm/linkedqueue"
+	"algorithm/linkedstack"
 	"fmt"
 	"strconv"
 )
 
 func main() {
+	myq := linkedqueue.NewLinkedQueue()
+	for i := 0; i < 10000000; i++ {
+		myq.EnQueue(i)
+	}
+	//for i := 0; i < 100; i++ {
+	//	fmt.Println(myq.DeQueue())
+	//}
+	for data := myq.DeQueue(); data != nil; data = myq.DeQueue() {
+		fmt.Println(data)
+	}
+
+}
+func main8() {
+	node := linkedstack.InitNode()
+	node.Push(1)
+	node.Push(2)
+	node.Push(3)
+	node.Push(4)
+	fmt.Println(node.Pop())
+	fmt.Println(node.Pop())
+	fmt.Println(node.Pop())
+	fmt.Println(node.Pop())
+
+}
+func main7() {
+
 	queue := circelqueue.InitQueue()
 	circelqueue.EnQueue(queue, 1)
 	circelqueue.EnQueue(queue, 2)
