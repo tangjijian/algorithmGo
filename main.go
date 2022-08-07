@@ -6,11 +6,20 @@ import (
 	"algorithm/circelqueue"
 	"algorithm/linkedqueue"
 	"algorithm/linkedstack"
+	"algorithm/sort"
 	"fmt"
 	"strconv"
 )
 
 func main() {
+	arr := []int{3, 2, 9, 4, 6, 8, 1, 5}
+	//fmt.Println(sort.InsertSort(arr)) // 插入
+	//fmt.Println(sort.BubbleSort(arr))  // 冒泡
+	//fmt.Println(sort.SelectSort(arr)) // 选择排序
+	//fmt.Println(sort.HeapSort(arr))// 堆排序
+	fmt.Println(sort.OddEven(arr))
+}
+func main9() {
 	myq := linkedqueue.NewLinkedQueue()
 	for i := 0; i < 10000000; i++ {
 		myq.EnQueue(i)
